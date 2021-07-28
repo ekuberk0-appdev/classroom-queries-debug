@@ -1,7 +1,7 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h1>
-      Course #<%= course.id %> details
+      Course #<%= courses_url %> details
     </h1>
 
     <div class="row mb-3">
@@ -17,21 +17,21 @@
         Title
       </dt>
       <dd>
-        <%= course.title %>
+        <%= courses_url %>
       </dd>
 
       <dt>
         Term offered
       </dt>
       <dd>
-        <%= course.term_offered %>
+        <%= courses_url %>
       </dd>
 
       <dt>
         Department
       </dt>
       <dd>
-        <% department = Department.where({ :id => course.department_id }).at(0) %>
+        <% department = Department.where({ :id => courses_url.department_id }).at(0) %>
         <a href="/departments/<%= department.id %>"><%= department.name %></a>
       </dd>
 

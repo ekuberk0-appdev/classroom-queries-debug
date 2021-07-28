@@ -8,11 +8,11 @@ class StudentsController < ApplicationController
   end
 
   def show
-    the_id = params.fetch("id")
+    the_id = params.fetch("path_id")
 
     matching_students = Enrollment.where({ :id => the_id })
 
-    @the_student = matching_students.at(0)
+    @the_student = matching_students
 
     render({ :template => "students/show.html.erb" })
   end
